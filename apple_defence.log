@@ -1,0 +1,50 @@
+2025-05-21 00:40:18,909 - __main__ - INFO - Loaded configuration from config.yaml
+2025-05-21 00:40:18,910 - shared.communication.message_bus - INFO - Message Bus initialized
+2025-05-21 00:40:18,910 - shared.communication.message_bus - INFO - Message Bus started
+2025-05-21 00:40:18,911 - red_agent.discovery.scanner - INFO - Vulnerability Scanner initialized with 0 modules
+2025-05-21 00:40:18,911 - red_agent.agent - INFO - Red Agent initialized with configuration: {'scanner_config': {'scan_interval': 10, 'scan_timeout': 60, 'scan_modules': ['memory_corruption', 'privilege_escalation', 'data_leakage', 'code_injection', 'sandbox_escape']}, 'exploit_config': {'exploit_timeout': 30, 'exploit_modules': ['buffer_overflow', 'use_after_free', 'race_condition', 'format_string', 'integer_overflow']}, 'discovery_config': {'discovery_methods': ['static_analysis', 'dynamic_analysis', 'fuzzing', 'symbolic_execution'], 'target_components': ['kernel', 'userland', 'browser', 'media', 'networking']}}
+2025-05-21 00:40:18,911 - blue_agent.monitoring.monitor - INFO - Security Monitor initialized with 0 modules
+2025-05-21 00:40:18,912 - blue_agent.analysis.analyzer - INFO - Threat Analyzer initialized with 0 modules
+2025-05-21 00:40:18,912 - blue_agent.mitigation.patcher - INFO - Security Patcher initialized with 0 modules
+2025-05-21 00:40:18,912 - blue_agent.agent - INFO - Blue Agent initialized with configuration: {'monitor_config': {'monitoring_interval': 5, 'alert_threshold': 5.0, 'monitoring_modules': ['process_monitor', 'network_monitor', 'file_system_monitor', 'memory_monitor']}, 'analyzer_config': {'analysis_timeout': 30, 'analysis_modules': ['vulnerability_impact', 'exploitability', 'mitigation_options'], 'patch_threshold': 5.0}, 'patcher_config': {'patch_timeout': 60, 'patch_modules': ['memory_corruption_patcher', 'privilege_escalation_patcher', 'data_leakage_patcher'], 'verification_required': True}}
+2025-05-21 00:40:18,912 - __main__ - INFO - Starting Apple-Defence system
+2025-05-21 00:40:18,913 - blue_agent.monitoring.monitor - INFO - Security Monitor started
+2025-05-21 00:40:18,913 - blue_agent.agent - INFO - Blue Agent started
+2025-05-21 00:40:18,913 - red_agent.agent - INFO - Red Agent started
+2025-05-21 00:40:18,913 - __main__ - INFO - Running for 10 seconds
+2025-05-21 00:40:18,914 - red_agent.agent - INFO - Scanning target for vulnerabilities: {'ios_version': '15.0', 'device_type': 'iPhone', 'name': 'Test Device'}
+2025-05-21 00:40:18,914 - red_agent.discovery.scanner - INFO - Starting vulnerability scan c355fbbb-20d4-495d-a16e-9d87e483ab55 on target: Test Device
+2025-05-21 00:40:18,914 - red_agent.discovery.scanner - INFO - Completed vulnerability scan c355fbbb-20d4-495d-a16e-9d87e483ab55 in 0.00 seconds, found 3 vulnerabilities
+2025-05-21 00:40:18,914 - blue_agent.agent - INFO - Received vulnerability: be83669e-011f-4158-9148-181eb346de5d
+2025-05-21 00:40:18,915 - blue_agent.analysis.analyzer - INFO - Analyzing vulnerability: be83669e-011f-4158-9148-181eb346de5d
+2025-05-21 00:40:18,915 - blue_agent.analysis.analyzer - INFO - Completed vulnerability analysis in 0.00 seconds
+2025-05-21 00:40:18,916 - blue_agent.agent - INFO - Developing patch for vulnerability be83669e-011f-4158-9148-181eb346de5d with priority normal
+2025-05-21 00:40:18,917 - blue_agent.mitigation.patcher - INFO - Generating patch for vulnerability: be83669e-011f-4158-9148-181eb346de5d
+2025-05-21 00:40:18,917 - blue_agent.mitigation.patcher - INFO - Generated patch 47fa4a2a-e318-41c4-b3c7-028740d351e0 in 0.00 seconds
+2025-05-21 00:40:18,917 - blue_agent.mitigation.patcher - INFO - Applying patch: 47fa4a2a-e318-41c4-b3c7-028740d351e0
+2025-05-21 00:40:18,917 - blue_agent.mitigation.patcher - INFO - Successfully applied patch 47fa4a2a-e318-41c4-b3c7-028740d351e0 in 0.00 seconds
+2025-05-21 00:40:18,917 - blue_agent.agent - INFO - Successfully applied patch for vulnerability be83669e-011f-4158-9148-181eb346de5d
+2025-05-21 00:40:18,924 - blue_agent.agent - INFO - Received vulnerability: 9bc2338f-dc3b-4f6a-a5b2-d41753df8a41
+2025-05-21 00:40:18,924 - blue_agent.analysis.analyzer - INFO - Analyzing vulnerability: 9bc2338f-dc3b-4f6a-a5b2-d41753df8a41
+2025-05-21 00:40:18,924 - blue_agent.analysis.analyzer - INFO - Completed vulnerability analysis in 0.00 seconds
+2025-05-21 00:40:18,924 - blue_agent.agent - INFO - Developing patch for vulnerability 9bc2338f-dc3b-4f6a-a5b2-d41753df8a41 with priority normal
+2025-05-21 00:40:18,926 - blue_agent.mitigation.patcher - INFO - Generating patch for vulnerability: 9bc2338f-dc3b-4f6a-a5b2-d41753df8a41
+2025-05-21 00:40:18,927 - blue_agent.mitigation.patcher - INFO - Generated patch 1fe3d7fa-ca8a-4393-9aba-c8c6e6d0f771 in 0.00 seconds
+2025-05-21 00:40:18,927 - blue_agent.mitigation.patcher - INFO - Applying patch: 1fe3d7fa-ca8a-4393-9aba-c8c6e6d0f771
+2025-05-21 00:40:18,928 - blue_agent.mitigation.patcher - INFO - Successfully applied patch 1fe3d7fa-ca8a-4393-9aba-c8c6e6d0f771 in 0.00 seconds
+2025-05-21 00:40:18,929 - blue_agent.agent - INFO - Successfully applied patch for vulnerability 9bc2338f-dc3b-4f6a-a5b2-d41753df8a41
+2025-05-21 00:40:18,929 - blue_agent.agent - INFO - Received vulnerability: 13f2fda0-83c4-4cb1-a12b-d9d2616200fc
+2025-05-21 00:40:18,930 - blue_agent.analysis.analyzer - INFO - Analyzing vulnerability: 13f2fda0-83c4-4cb1-a12b-d9d2616200fc
+2025-05-21 00:40:18,930 - blue_agent.analysis.analyzer - INFO - Completed vulnerability analysis in 0.00 seconds
+2025-05-21 00:40:18,931 - blue_agent.agent - INFO - Developing patch for vulnerability 13f2fda0-83c4-4cb1-a12b-d9d2616200fc with priority normal
+2025-05-21 00:40:18,931 - blue_agent.mitigation.patcher - INFO - Generating patch for vulnerability: 13f2fda0-83c4-4cb1-a12b-d9d2616200fc
+2025-05-21 00:40:18,932 - blue_agent.mitigation.patcher - INFO - Generated patch 187b833c-45b9-43cb-83ad-d32d5a180fa2 in 0.00 seconds
+2025-05-21 00:40:18,933 - blue_agent.mitigation.patcher - INFO - Applying patch: 187b833c-45b9-43cb-83ad-d32d5a180fa2
+2025-05-21 00:40:18,933 - blue_agent.mitigation.patcher - INFO - Successfully applied patch 187b833c-45b9-43cb-83ad-d32d5a180fa2 in 0.00 seconds
+2025-05-21 00:40:18,933 - blue_agent.agent - INFO - Successfully applied patch for vulnerability 13f2fda0-83c4-4cb1-a12b-d9d2616200fc
+2025-05-21 00:40:28,965 - __main__ - INFO - Saved report to security_report.json
+2025-05-21 00:40:28,965 - __main__ - INFO - Stopping Apple-Defence system
+2025-05-21 00:40:28,966 - red_agent.agent - INFO - Red Agent stopped
+2025-05-21 00:40:30,966 - blue_agent.monitoring.monitor - INFO - Security Monitor stopped
+2025-05-21 00:40:30,966 - blue_agent.agent - INFO - Blue Agent stopped
+2025-05-21 00:40:31,007 - shared.communication.message_bus - INFO - Message Bus stopped

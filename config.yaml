@@ -1,0 +1,91 @@
+# Apple-Defence Configuration
+
+# General configuration
+general:
+  log_level: INFO
+  report_dir: ./reports
+  sandbox_dir: ./sandbox/environments
+
+# Red Agent configuration
+red_agent:
+  # Scanner configuration
+  scanner_config:
+    scan_interval: 10  # seconds
+    scan_timeout: 60  # seconds
+    scan_modules:
+      - memory_corruption
+      - privilege_escalation
+      - data_leakage
+      - code_injection
+      - sandbox_escape
+  
+  # Exploit configuration
+  exploit_config:
+    exploit_timeout: 30  # seconds
+    exploit_modules:
+      - buffer_overflow
+      - use_after_free
+      - race_condition
+      - format_string
+      - integer_overflow
+  
+  # Discovery configuration
+  discovery_config:
+    discovery_methods:
+      - static_analysis
+      - dynamic_analysis
+      - fuzzing
+      - symbolic_execution
+    target_components:
+      - kernel
+      - userland
+      - browser
+      - media
+      - networking
+
+# Blue Agent configuration
+blue_agent:
+  # Monitor configuration
+  monitor_config:
+    monitoring_interval: 5  # seconds
+    alert_threshold: 5.0  # minimum severity to generate an alert
+    monitoring_modules:
+      - process_monitor
+      - network_monitor
+      - file_system_monitor
+      - memory_monitor
+  
+  # Analyzer configuration
+  analyzer_config:
+    analysis_timeout: 30  # seconds
+    analysis_modules:
+      - vulnerability_impact
+      - exploitability
+      - mitigation_options
+    patch_threshold: 5.0  # minimum severity to generate a patch
+  
+  # Patcher configuration
+  patcher_config:
+    patch_timeout: 60  # seconds
+    patch_modules:
+      - memory_corruption_patcher
+      - privilege_escalation_patcher
+      - data_leakage_patcher
+    verification_required: true  # verify patches before applying
+
+# Sandbox configuration
+sandbox:
+  ios_versions:
+    - "14.0"
+    - "15.0"
+    - "16.0"
+  device_types:
+    - iPhone
+    - iPad
+  simulation_level: high  # low, medium, high
+  isolation_level: strict  # loose, normal, strict
+
+# Communication configuration
+communication:
+  message_queue_size: 1000
+  message_timeout: 5  # seconds

@@ -1,0 +1,27 @@
+# Core dependencies
+numpy>=1.20.0
+pandas>=1.3.0
+scikit-learn>=1.0.0
+tensorflow>=2.8.0
+torch>=1.10.0
+transformers>=4.18.0
+
+# Security tools
+frida>=15.0.0
+objection>=1.11.0
+pwntools>=4.7.0
+
+# iOS integration
+pyobjc>=8.0  # For macOS/iOS integration
+
+# Utilities
+requests>=2.27.0
+pyyaml>=6.0
+tqdm>=4.62.0
+
+# Testing
+pytest>=7.0.0
+pytest-cov>=3.0.0
+
+# Documentation
+sphinx>=4.4.0

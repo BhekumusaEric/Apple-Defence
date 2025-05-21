@@ -1,0 +1,147 @@
+{
+  "vulnerabilities": {
+    "total": 3,
+    "patched": 3,
+    "unpatched": 0,
+    "details": [
+      {
+        "id": "be83669e-011f-4158-9148-181eb346de5d",
+        "type": "memory_corruption",
+        "name": "Buffer Overflow in Media Processing",
+        "description": "A buffer overflow vulnerability in the media processing subsystem could allow arbitrary code execution.",
+        "severity": 8.5,
+        "ios_version": "15.0",
+        "affected_devices": [
+          "iPhone"
+        ],
+        "discovery_time": 1747788018.9144733,
+        "cve_id": null,
+        "exploit_difficulty": "medium",
+        "details": {
+          "component": "MediaProcessing",
+          "attack_vector": "Malformed media file",
+          "impact": "Arbitrary code execution with system privileges"
+        }
+      },
+      {
+        "id": "9bc2338f-dc3b-4f6a-a5b2-d41753df8a41",
+        "type": "privilege_escalation",
+        "name": "Kernel Extension Privilege Escalation",
+        "description": "A vulnerability in a kernel extension allows an application to escalate privileges to root.",
+        "severity": 7.8,
+        "ios_version": "15.0",
+        "affected_devices": [
+          "iPhone"
+        ],
+        "discovery_time": 1747788018.9144967,
+        "cve_id": null,
+        "exploit_difficulty": "high",
+        "details": {
+          "component": "IOKit",
+          "attack_vector": "Malicious application",
+          "impact": "Privilege escalation to root"
+        }
+      },
+      {
+        "id": "13f2fda0-83c4-4cb1-a12b-d9d2616200fc",
+        "type": "data_leakage",
+        "name": "Keychain Data Leakage",
+        "description": "A vulnerability in the Keychain allows a malicious application to access sensitive data.",
+        "severity": 6.5,
+        "ios_version": "15.0",
+        "affected_devices": [
+          "iPhone"
+        ],
+        "discovery_time": 1747788018.9145172,
+        "cve_id": null,
+        "exploit_difficulty": "medium",
+        "details": {
+          "component": "Keychain",
+          "attack_vector": "Malicious application",
+          "impact": "Access to sensitive data"
+        }
+      }
+    ]
+  },
+  "patches": {
+    "total": 3,
+    "details": [
+      {
+        "vulnerability_id": "be83669e-011f-4158-9148-181eb346de5d",
+        "patch": {
+          "id": "47fa4a2a-e318-41c4-b3c7-028740d351e0",
+          "vulnerability_id": "be83669e-011f-4158-9148-181eb346de5d",
+          "type": "memory_corruption",
+          "description": "Adds input validation and uses secure memory functions to prevent buffer overflow",
+          "code": "\n            // Memory corruption patch\n            if (buffer_size > MAX_BUFFER_SIZE) {\n                return ERROR_BUFFER_TOO_LARGE;\n            }\n            memcpy_s(dst, dst_size, src, src_size);  // Use secure memcpy\n            ",
+          "created_at": 1747788018.9173906,
+          "created_by": "Blue Agent",
+          "status": "generated",
+          "estimated_effectiveness": 0.9,
+          "target_components": "MediaProcessing",
+          "patch_complexity": "medium"
+        },
+        "timestamp": 1747788018.924064,
+        "result": {
+          "success": true,
+          "patch_id": "47fa4a2a-e318-41c4-b3c7-028740d351e0",
+          "vulnerability_id": "be83669e-011f-4158-9148-181eb346de5d",
+          "applied_at": 1747788018.917762,
+          "applied_by": "Blue Agent",
+          "status": "applied"
+        }
+      },
+      {
+        "vulnerability_id": "9bc2338f-dc3b-4f6a-a5b2-d41753df8a41",
+        "patch": {
+          "id": "1fe3d7fa-ca8a-4393-9aba-c8c6e6d0f771",
+          "vulnerability_id": "9bc2338f-dc3b-4f6a-a5b2-d41753df8a41",
+          "type": "privilege_escalation",
+          "description": "Adds permission checks to prevent unauthorized privilege escalation",
+          "code": "\n            // Privilege escalation patch\n            if (!check_permission(user, PERMISSION_ADMIN)) {\n                return ERROR_PERMISSION_DENIED;\n            }\n            ",
+          "created_at": 1747788018.9273496,
+          "created_by": "Blue Agent",
+          "status": "generated",
+          "estimated_effectiveness": 0.9,
+          "target_components": "IOKit",
+          "patch_complexity": "medium"
+        },
+        "timestamp": 1747788018.9295669,
+        "result": {
+          "success": true,
+          "patch_id": "1fe3d7fa-ca8a-4393-9aba-c8c6e6d0f771",
+          "vulnerability_id": "9bc2338f-dc3b-4f6a-a5b2-d41753df8a41",
+          "applied_at": 1747788018.928494,
+          "applied_by": "Blue Agent",
+          "status": "applied"
+        }
+      },
+      {
+        "vulnerability_id": "13f2fda0-83c4-4cb1-a12b-d9d2616200fc",
+        "patch": {
+          "id": "187b833c-45b9-43cb-83ad-d32d5a180fa2",
+          "vulnerability_id": "13f2fda0-83c4-4cb1-a12b-d9d2616200fc",
+          "type": "data_leakage",
+          "description": "Encrypts sensitive data before storage to prevent data leakage",
+          "code": "\n            // Data leakage patch\n            encrypted_data = encrypt_data(sensitive_data, encryption_key);\n            store_data(encrypted_data);\n            ",
+          "created_at": 1747788018.9325938,
+          "created_by": "Blue Agent",
+          "status": "generated",
+          "estimated_effectiveness": 0.9,
+          "target_components": "Keychain",
+          "patch_complexity": "medium"
+        },
+        "timestamp": 1747788018.9334824,
+        "result": {
+          "success": true,
+          "patch_id": "187b833c-45b9-43cb-83ad-d32d5a180fa2",
+          "vulnerability_id": "13f2fda0-83c4-4cb1-a12b-d9d2616200fc",
+          "applied_at": 1747788018.93317,
+          "applied_by": "Blue Agent",
+          "status": "applied"
+        }
+      }
+    ]
+  },
+  "timestamp": 1747788028.9639099
+}
